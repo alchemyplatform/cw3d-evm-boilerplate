@@ -16,6 +16,7 @@ import {
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import MainLayout from "../layout/mainLayout";
+import { useRouter } from "next/router";
 
 const { chains, provider } = configureChains(
   [
@@ -45,6 +46,7 @@ const wagmiClient = createClient({
 export { WagmiConfig, RainbowKitProvider };
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter()
   const account = useAccount({
     onConnect({ address, connector, isReconnected }) {
       if (!isReconnected) router.reload();

@@ -87,6 +87,7 @@ line-height: 28px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	gap:1rem;
 }
 .icons_container{
 	display: flex;
